@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+ 	<meta charset="UTF-8">
+ 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+ 	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 	<!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+ 	<title>Psychic-Game</title>
+
+</head>
+<body>
+	<!-- header -->
+	<div class="container">
+		<div class="jumbotron">
+	  		<h1>Psychic-Game 
+	  		<br>
+	  		<small>I am thinking of a letter, try to guess!</small></h1>
+		</div>
+	</div>
+ 	<!-- wins and losses counter -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4" >
+				<div class="panel panel-success">
+				 	<div class="panel-heading">Wins:
+				 	</div>
+				 	<div class="panel-body" id="winCount">
+				    <!-- content to be dynamicly added by JS -->
+				    0
+				 	</div>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-danger">
+				 	<div class="panel-heading">Losses:
+				 	</div>
+				 	<div class="panel-body" id="lossCount">
+				    <!-- content to be dynamicly added by JS -->
+				    0
+				 	</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+	 <!-- guesses left and list of guesses -->
+	 <div class="container">
+	 	<div class="row">
+	 		<div class="col-md-4">
+				<div class="panel panel-info">
+				 	<div class="panel-heading">Guesses Left:
+				 	</div>
+				 	<div class="panel-body" id="guessCount">
+				    <!-- content to be dynamicly added by JS -->
+				    9
+				 	</div>
+				 </div>			 			
+	 		</div>
+	 		<div class="col-md-4">
+				<div class="panel panel-warning">
+				 	<div class="panel-heading">Previous Guesses:
+				 	</div>
+				 	<div class="panel-body" id="guessList">
+				    <!-- content to be dynamicly added by JS -->
+
+				 	</div>
+				 </div>			 			
+	 		</div>
+	 	</div>
+	 	
+	 </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
