@@ -7,9 +7,7 @@
  	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
- 	<!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet"> 	
 
  	<title>Psychic-Game</title>
 
@@ -26,9 +24,11 @@
  	<!-- wins and losses counter -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4" >
+			<div class="col-md-5" >
 				<div class="panel panel-success">
-				 	<div class="panel-heading">Wins:
+				 	<div class="panel-heading">
+				 	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 
+				 	Wins:
 				 	</div>
 				 	<div class="panel-body" id="winCount">
 				    <!-- content to be dynamicly added by JS -->
@@ -36,9 +36,12 @@
 				 	</div>
 				</div>		
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-2"></div>
+			<div class="col-md-5">
 				<div class="panel panel-danger">
-				 	<div class="panel-heading">Losses:
+				 	<div class="panel-heading">
+				 	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				 	Losses:
 				 	</div>
 				 	<div class="panel-body" id="lossCount">
 				    <!-- content to be dynamicly added by JS -->
@@ -51,9 +54,11 @@
 	 <!-- guesses left and list of guesses -->
 	 <div class="container">
 	 	<div class="row">
-	 		<div class="col-md-4">
+	 		<div class="col-md-5">
 				<div class="panel panel-info">
-				 	<div class="panel-heading">Guesses Left:
+				 	<div class="panel-heading">
+				 	<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+				 	Guesses Left:
 				 	</div>
 				 	<div class="panel-body" id="guessCount">
 				    <!-- content to be dynamicly added by JS -->
@@ -61,9 +66,12 @@
 				 	</div>
 				 </div>			 			
 	 		</div>
-	 		<div class="col-md-4">
+	 		<div class="col-md-2"></div>
+	 		<div class="col-md-5">
 				<div class="panel panel-warning">
-				 	<div class="panel-heading">Previous Guesses:
+				 	<div class="panel-heading">
+				 	<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				 	Previous Guesses:
 				 	</div>
 				 	<div class="panel-body" id="guessList">
 				    <!-- content to be dynamicly added by JS -->
@@ -75,6 +83,9 @@
 	 	
 	 </div>
 </body>
+<!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>
 
 

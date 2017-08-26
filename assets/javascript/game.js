@@ -1,64 +1,75 @@
-// letter choices
-var computerChoices = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k",
-"l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var userGuess = [];
+//Available choices
+var computerChoices = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+// integer variables
 var wins = 0;
 var losses = 0;
 var guess = 9;
+var guessesLeft = 9;
+// string variables
+var guessedLetters = [];
+var computerLetter = null;
 
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+//computer randomly chooses a letter
 
-$(document).ready(function() {
+var computerLetter = computerChoices [Math.floor(Math.random()*computerChoices.length)];
 
-    document.onkeyup = function(event) {
-     
-   		var userGuess = event.key;
-   		document.getElementById('guessList').append(userGuess);
+//updates guesses left function
 
-       	if(userGuess === computerGuess){
-	        wins++;
-	    }else{
-	        guess--;
-	    }
+var updateGuessesLeft = function() {
+    document.querySelector('#guessCount').innerHTML = guessesLeft;
+};
 
-	    if(guess === 0){
-	        losses++
-	    }
-	    
-	document.getElementById('winCount').innerHTML =(wins);
-    document.getElementById('lossCount').innerHTML =(losses);
-    document.getElementById('guessCount').innerHTML =(guess);
-	}
-});
+//letter to guess function
 
-    
+var updatecomputerLetter = function(){
+    this.computerLetter = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+};
 
+var updateGuessesSoFar = function(){
+    document.querySelector('#guessList').innerHTML = guessedLetters.join(', ');
+};
 
-      
+//reset the counters for next game
 
-      // ...
+var resetCounters = function(){
+    totalGuesses = 9;
+    guessesLeft = 9;
+    guessedLetters = [];
 
-   
-// document.getElementById("startButton").addEventListener("click", start);
-// document.onkeyup = function(event) {
-// 	var userGuess = event.key;
-// 	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-// 	console.log(computerGuess);
+    updateletterToGuess();
+    updateGuessesSoFar();
+    updateGuessesLeft();
 
-// 	for (var i = 9; i < 0; i - 1) {	
-// 		document.getElementById('guessList').append(userGuess);
+};
 
-// 		if (userGuess === computerGuess) {
-// 			wins++
-// 			document.getElementById('winCount').innerHTML = wins;
-// 			break;
-// 		} else if (userGuess !== computerGuess) {
-// 			guess - 1;
-// 			document.getElementById('guessCount').innerHTML = guess;
-// 		} else if (userGuess !== computerGuess && guess === 0){
-// 			losses++
-// 			alert("Sorry, machine wins...")
-// 		}
+updateGuessesLeft();
+updatecomputerLetter();
 
-// 	}
-// }
+//user input key
+
+document.onkeyup = function(event) {
+    guessesLeft--;
+    var userGuess = event.key;
+    console.log(userGuess)
+
+    guessedLetters.push(userGuess);
+    updateGuessesLeft();
+    updateGuessesSoFar();
+
+        if (guessesLeft > 0){
+            if (userGuess === computerLetter){
+                wins++;
+                document.querySelector('#winCount').innerHTML = wins;
+                alert("Very good, you're very skillful!");
+                resetCounters();
+            }
+        } else if (guessesLeft === 0){
+            losses++;
+            document.querySelector('#lossCount').innerHTML = losses;
+            alert("Sorry, robots win!");
+
+            resetCounters();
+        }
+}
+
